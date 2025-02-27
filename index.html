@@ -61,6 +61,11 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
             animation: slideIn 2s;
+            transition: transform 0.3s ease;
+        }
+
+        .current-weather:hover {
+            transform: scale(1.05);
         }
 
         .current-weather h2 {
@@ -102,6 +107,11 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
             animation: slideIn 2s;
+            transition: transform 0.3s ease;
+        }
+
+        .forecast:hover {
+            transform: scale(1.05);
         }
 
         .forecast h2 {
@@ -123,6 +133,11 @@
             margin: 10px;
             width: calc(33.33% - 20px);
             animation: zoomIn 2s;
+            transition: transform 0.3s ease;
+        }
+
+        .carousel-item:hover {
+            transform: scale(1.05);
         }
 
         .carousel-item h3 {
@@ -142,6 +157,11 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
             animation: slideIn 2s;
+            transition: transform 0.3s ease;
+        }
+
+        .places-to-visit:hover {
+            transform: scale(1.05);
         }
 
         .places-to-visit h2 {
@@ -161,6 +181,11 @@
             border: 1px solid #ddd;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             animation: zoomIn 2s;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
         }
 
         .card h3 {
@@ -257,6 +282,59 @@
                 transform: scale(1);
             }
         }
+
+        /* Weather icons */
+        .sunny {
+            color: #ffff00;
+        }
+
+        .cloudy {
+            color: #808080;
+        }
+
+        .rainy {
+            color: #0000ff;
+        }
+
+        .partly-cloudy {
+            color: #cccccc;
+        }
+
+        .snowy {
+            color: #ffffff;
+        }
+
+        /* Product carousel */
+        .product-carousel {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .product-carousel-item {
+            background-color: #add8e6;
+            padding: 20px;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            width: calc(33.33% - 20px);
+            animation: zoomIn 2s;
+            transition: transform 0.3s ease;
+        }
+
+        .product-carousel-item:hover {
+            transform: scale(1.05);
+        }
+
+        .product-carousel-item h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .product-carousel-item p {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
@@ -270,7 +348,7 @@
             <h2>Current Weather</h2>
             <div class="weather-info">
                 <p>Location: New York, USA</p>
-                <h3>25°C</h3>
+                <h3>25°C <i class="fa-solid fa-sun sunny"></i></h3>
                 <p>Sunny</p>
             </div>
             <div class="weather-stats">
@@ -283,37 +361,37 @@
             <div class="carousel">
                 <div class="carousel-item">
                     <h3>Monday</h3>
-                    <p>22°C</p>
+                    <p>22°C <i class="fa-solid fa-cloud cloudy"></i></p>
                     <p>Partly Cloudy</p>
                 </div>
                 <div class="carousel-item">
                     <h3>Tuesday</h3>
-                    <p>18°C</p>
+                    <p>18°C <i class="fa-solid fa-cloud-rain rainy"></i></p>
                     <p>Rainy</p>
                 </div>
                 <div class="carousel-item">
                     <h3>Wednesday</h3>
-                    <p>20°C</p>
+                    <p>20°C <i class="fa-solid fa-cloud cloudy"></i></p>
                     <p>Cloudy</p>
                 </div>
                 <div class="carousel-item">
                     <h3>Thursday</h3>
-                    <p>25°C</p>
+                    <p>25°C <i class="fa-solid fa-sun sunny"></i></p>
                     <p>Sunny</p>
                 </div>
                 <div class="carousel-item">
                     <h3>Friday</h3>
-                    <p>23°C</p>
+                    <p>23°C <i class="fa-solid fa-cloud-showers-heavy partly-cloudy"></i></p>
                     <p>Showers</p>
                 </div>
                 <div class="carousel-item">
                     <h3>Saturday</h3>
-                    <p>24°C</p>
+                    <p>24°C <i class="fa-solid fa-cloud partly-cloudy"></i></p>
                     <p>Partly Cloudy</p>
                 </div>
                 <div class="carousel-item">
                     <h3>Sunday</h3>
-                    <p>26°C</p>
+                    <p>26°C <i class="fa-solid fa-sun sunny"></i></p>
                     <p>Sunny</p>
                 </div>
             </div>
@@ -323,58 +401,111 @@
             <div class="grid">
                 <div class="card">
                     <h3>Kerala</h3>
-                    <p>29°C</p>
+                    <p>29°C <i class="fa-solid fa-sun sunny"></i></p>
                     <p>Precipitation: 5%</p>
                     <p>Humidity: 77%</p>
                     <p>Wind: 6 km/h</p>
                 </div>
                 <div class="card">
                     <h3>Goa</h3>
-                    <p>32°C</p>
+                    <p>32°C <i class="fa-solid fa-sun sunny"></i></p>
                     <p>Precipitation: 0%</p>
                     <p>Humidity: 49%</p>
                     <p>Wind: 10 km/h</p>
                 </div>
                 <div class="card">
                     <h3>Kashmir</h3>
-                    <p>7°C</p>
+                    <p>7°C <i class="fa-solid fa-snowflake snowy"></i></p>
                     <p>Precipitation: 0%</p>
                     <p>Humidity: 39%</p>
                     <p>Wind: 6 km/h</p>
                 </div>
                 <div class="card">
                     <h3>Coorg</h3>
-                    <p>29°C</p>
+                    <p>29°C <i class="fa-solid fa-cloud cloudy"></i></p>
                     <p>Precipitation: 5%</p>
                     <p>Humidity: 77%</p>
                     <p>Wind: 6 km/h</p>
                 </div>
                 <div class="card">
                     <h3>Assam</h3>
-                    <p>16°C</p>
+                    <p>16°C <i class="fa-solid fa-cloud partly-cloudy"></i></p>
                     <p>Precipitation: 0%</p>
                     <p>Humidity: 68%</p>
                     <p>Wind: 5 km/h</p>
                 </div>
                 <div class="card">
                     <h3>Manali</h3>
-                    <p>-1°C</p>
+                    <p>-1°C <i class="fa-solid fa-snowflake snowy"></i></p>
                     <p>Precipitation: 0%</p>
                     <p>Humidity: 55%</p>
                     <p>Wind: 5 km/h</p>
                 </div>
                 <div class="card">
                     <h3>Jaipur</h3>
-                    <p>26°C</p>
+                    <p>26°C <i class="fa-solid fa-sun sunny"></i></p>
                     <p>Precipitation: 0%</p>
                     <p>Humidity: 20%</p>
                     <p>Wind: 10 km/h</p>
                 </div>
                 <div class="card">
                     <h3>Vrindavan</h3>
-                    <p>23°C</p>
+                    <p>23°C <i class="fa-solid fa-cloud partly-cloudy"></i></p>
                     <p>Precipitation: 0%</p>
                     <p>Humidity: 53%</p>
+                    <p>Wind: 10 km/h</p>
+                </div>
+            </div>
+        </section>
+        <section class="product-carousel-section">
+            <center><h2>Other Cities</h2></center>
+            <div class="product-carousel">
+                <div class="product-carousel-item">
+                    <h3>New York</h3>
+                    <p>Temperature: 25°C</p>
+                    <p>Humidity: 60%</p>
+                    <p>Wind: 10 km/h</p>
+                </div>
+                <div class="product-carousel-item">
+                    <h3>Los Angeles</h3>
+                    <p>Temperature: 28°C</p>
+                    <p>Humidity: 50%</p>
+                    <p>Wind: 15 km/h</p>
+                </div>
+                <div class="product-carousel-item">
+                    <h3>Chicago</h3>
+                    <p>Temperature: 22°C</p>
+                    <p>Humidity: 70%</p>
+                    <p>Wind: 12 km/h</p>
+                </div>
+                <div class="product-carousel-item">
+                    <h3>Houston</h3>
+                    <p>Temperature: 30°C</p>
+                    <p>Humidity: 60%</p>
+                    <p>Wind: 10 km/h</p>
+                </div>
+                <div class="product-carousel-item">
+                    <h3>Phoenix</h3>
+                    <p>Temperature: 32°C</p>
+                    <p>Humidity: 40%</p>
+                    <p>Wind: 15 km/h</p>
+                </div>
+                <div class="product-carousel-item">
+                    <h3>Philadelphia</h3>
+                    <p>Temperature: 25°C</p>
+                    <p>Humidity: 60%</p>
+                    <p>Wind: 10 km/h</p>
+                </div>
+                <div class="product-carousel-item">
+                    <h3>San Antonio</h3>
+                    <p>Temperature: 28°C</p>
+                    <p>Humidity: 50%</p>
+                    <p>Wind: 12 km/h</p>
+                </div>
+                <div class="product-carousel-item">
+                    <h3>San Diego</h3>
+                    <p>Temperature: 26°C</p>
+                    <p>Humidity: 60%</p>
                     <p>Wind: 10 km/h</p>
                 </div>
             </div>
