@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard Sign Up</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-bg: #4e738a;
+            --card-bg: rgba(255, 255, 255, 0.15);
+            --text-color: #ffffff;
+            --input-bg: rgba(255, 255, 255, 0.1);
+            --button-bg: #2c8ae8;
+            --button-hover: #1c6cb8;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom, #4e738a, #2c4353);
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-color);
+        }
+        
+        .signup-container {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            width: 100%;
+            max-width: 400px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--text-color);
+            font-weight: 500;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        h2 i {
+            color: #90c4ff;
+        }
+        
+        .input-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        input {
+            width: 100%;
+            padding: 12px 15px;
+            background: var(--input-bg);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            color: var(--text-color);
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+        
+        input:focus {
+            outline: none;
+            border-color: var(--button-bg);
+            box-shadow: 0 0 0 2px rgba(44, 138, 232, 0.3);
+        }
+        
+        .button-group {
+            margin-top: 30px;
+        }
+        
+        button {
+            width: 100%;
+            padding: 14px;
+            background: var(--button-bg);
+            color: var(--text-color);
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        button:hover {
+            background: var(--button-hover);
+            transform: translateY(-2px);
+        }
+        
+        button:active {
+            transform: translateY(0);
+        }
+        
+        .login-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .login-link:hover {
+            color: var(--text-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <form id="signupForm">
+            <h2>Weather Dashboard - Sign Up <i class="fa-solid fa-cloud-sun"></i></h2>
+
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <div class="input-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+            </div>
+
+            <div class="button-group">
+                <button id="signup-btn" type="submit">Sign Up</button>
+            </div>
+            
+            <a href="login.html" class="login-link">Already have an account? Login</a>
+        </form>
+    </div>
+
+    <script>
+        const signupForm = document.getElementById("signupForm");
+        const username = document.getElementById("username");
+        const email = document.getElementById("email");
+        const password = document.getElementById("password");
+        const confirmPassword = document.getElementById("confirmPassword");
+        
+        function validateSignup(event) {
+            event.preventDefault();
+            
+            if (password.value !== confirmPassword.value) {
+                alert("Passwords don't match!");
+                return;
+            }
+            
+            if (username.value && email.value && password.value) {
+                // You can add more validation here
+                alert("Account created successfully! Redirecting to login page...");
+                window.location.href = '/login.html';
+            } else {
+                alert("Please fill in all fields!");
+            }
+        }
+        
+        signupForm.addEventListener("submit", validateSignup);
+    </script>
+</body>
+</html>
